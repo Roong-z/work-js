@@ -14,33 +14,40 @@
 </head>
 
 <body>
-	<input class="check" type="checkbox" />
-	<div class="themed">Theme</div>
-	<script>
-		const $checkbox = document.querySelector('.check');
+	<!-- 헤더/다크모드 -->
+	<header>
+		<input class="check" type="checkbox" />
+		<div class="themed"></div>
+		<script>
+			const $checkbox = document.querySelector('.check');
 
-		$checkbox.addEventListener('click', e => {
-			if (e.target.checked) {
-				document.documentElement.setAttribute('color-theme', 'dark');
-			} else {
-				document.documentElement.setAttribute('color-theme', 'light');
-			}
-		});
-	</script>
-	<span class='badge bg-dark ms-auto mx-3'>
-		Dark🔄
-	</span>
-	<script>
-		const count = 0;
-		$('.badge').on('click', function () {
-			count++;
-			if (count % 2 == 1) {
-				$('.badge').html("Light")
-			} else {
-				$('.badge').html("Dark")
-			}
-		})
-	</script>
+			$checkbox.addEventListener('click', e => {
+				if (e.target.checked) {
+					document.documentElement.setAttribute('color-theme', 'dark');
+				} else {
+					document.documentElement.setAttribute('color-theme', 'light');
+				}
+			});
+		</script>
+		<span class='badge bg-dark ms-auto mx-3'>
+			Dark🔄
+		</span>
+		<div style="text-align: right">
+			<button type="button" class="btn btn-danger" id='loginBtn'>로그인버튼</button>
+		</div>
+		<script>
+			var count = 0;
+			$('.badge').on('click', function () {
+				count++;
+				if (count % 2 == 1) {
+					$('.badge').html("Light")
+				} else {
+					$('.badge').html("Dark")
+				}
+			})
+		</script>
+	</header>
+	<!-- nav바 -->
 	<nav class="navbar navbar-light bg-light">
 		<div class="container-fluid">
 			<span class="navbar-brand">Navbar</span>
@@ -56,8 +63,32 @@
 		<li class="list-group-item">A fourth item</li>
 		<li class="list-group-item">And a fifth one</li>
 	</ul>
+	<!-- 메인화면 -->
+	<div class="mainTitle">
+		<div class="alert alert-danger">
+			<span id="num">5</span>초 이내 구매시 사은품 증정!
+		</div>
+	</div>
+	<script>
+		var count = 5;
+		var timer = null;
+
+		timer = setInterval(function () {
+			count -= 1;
+			if (count >= 0) {
+				document.querySelector('#num').innerHTML = count;
+			}
+			else {
+				$('.alert').hide();
+				clearTimeout(timer);
+			}
+			console.log(count)
+		}, 1000)
 
 
+	</script>
+
+	<!-- 로그인 모달창 -->
 	<div class="black-bg">
 		<div class="white-bg">
 			<h4>로그인하세요</h4>
@@ -73,9 +104,7 @@
 			</form>
 		</div>
 	</div>
-
 	<script>
-
 		$('#pw').on('change', function () {
 			console.log('비번유출중')
 		})
@@ -94,12 +123,6 @@
 			}
 		})
 	</script>
-
-
-	<div>
-		<button id='loginBtn'>로그인버튼</button>
-	</div>
-
 	<script>
 		$('#loginBtn').on('click', function () {
 			$('.black-bg').addClass('show-modal')
