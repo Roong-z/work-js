@@ -1,0 +1,21 @@
+:root[color-theme='light'] {
+   --background: #fff;
+   --boxColor: #000;
+}
+
+:root[color-theme='dark'] {
+   --background: #000;
+   --boxColor: #fff;
+}
+
+html {
+   background: var(--background);
+}
+
+.themed {
+   display: block;
+   width: 10em;
+   height: 10em;
+   background: var(--boxColor);
+   color: var(--background);
+}
