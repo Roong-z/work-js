@@ -48,18 +48,22 @@
 	</div>
 
 	<script>
-		var chkPW = $('#pw').val().search(/^[A-Za-z0-9]{6,12}$/);
+
+		$('#pw').on('change', function () {
+			console.log('비번유출중')
+		})
+		var chkPW = $('#pw').val().search(/^[A-Za-z0-9]{6,12}$/);
 
 		$('form').on('submit', function (e) {
 			if ($('#email').val() == '') {
 				alert('아이디를입력해제발')
-				e.preventDefault();	
-			}if ($('#pw').val() == '') {
+				e.preventDefault();
+			} if ($('#pw').val() == '') {
 				alert('비번을입력해제발')
-				e.preventDefault();		
-			}else if( chkPW<0 ){
+				e.preventDefault();
+			} else if (chkPW < 0) {
 				alert('비밀번호는 6자이상 12자 이하만 가능합니다.(특문안됨)')
-				e.preventDefault();			
+				e.preventDefault();
 			}
 		})
 	</script>
