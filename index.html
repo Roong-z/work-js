@@ -69,6 +69,19 @@
 			<span id="num">5</span>초 이내 구매시 사은품 증정과연!
 		</div>
 	</div>
+	<div style="overflow: hidden">
+		<div class="slide-container">
+			<div class="slide-box">
+				<img src="./src/car1.png">
+			</div>
+			<div class="slide-box">
+				<img src="./src/car2.png">
+			</div>
+			<div class="slide-box">
+				<img src="./src/car3.png">
+			</div>
+		</div>
+	</div>
 	<script>
 		var count = 5;
 		var timer = null;
@@ -84,8 +97,6 @@
 			}
 			console.log(count)
 		}, 1000)
-
-
 	</script>
 
 	<!-- 로그인 모달창 -->
@@ -109,6 +120,8 @@
 			console.log('비번유출중')
 		})
 		var chkPW = $('#pw').val().search(/^[A-Za-z0-9]{6,12}$/);
+
+
 
 		$('form').on('submit', function (e) {
 			if ($('#email').val() == '') {

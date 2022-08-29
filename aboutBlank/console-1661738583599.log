@@ -1,0 +1,34 @@
+document.write(`<form class ='DoForm'><input type ='text' placeholder='todo what?'/> </form>`)
+undefined
+document.write(`<ul class='toDos'></ul>`)
+undefined
+document.getElementsByClassName('toDos')[0].append(`<li>첫번째</li>`)
+undefined
+document.getElementsByClassName('toDos')[0].remove
+ƒ remove() { [native code] }
+document.getElementsByClassName('toDos')[0].remove(`<li>첫번째</li>`)
+undefined
+document.getElementsByClassName('DoForm')[0].className = "doForm"
+'doForm'
+const doForm = document.querySelector('.doForm');
+undefined
+const doInput = doForm.querySelector('input');
+undefined
+const toDos = document.querySelector('.toDos');
+undefined
+document.write(`<ul class='toDos'></ul>`)
+undefined
+const toDos = document.querySelector('.toDos');
+undefined
+function init() { doForm.addEventListener('submit',createToDo);}
+undefined
+init
+ƒ init() { doForm.addEventListener('submit',createToDo);}
+function createToDo(e){e.preventDefault(); const toDo = doInput.value; paintToDo(toDo); doInput.value='';}
+undefined
+createToDo
+ƒ createToDo(e){e.preventDefault(); const toDo = doInput.value; paintToDo(toDo); doInput.value='';}
+function paintToDo(toDo){const li = document.createElement('li'); const span = document.createElement('span'); span.innerHTML = toDo; li.appendChild(span); toDos.appendChild(li);}
+undefined
+paintToDo
+ƒ paintToDo(toDo){const li = document.createElement('li'); const span = document.createElement('span'); span.innerHTML = toDo; li.appendChild(span); toDos.appendChild(li);}
