@@ -16,16 +16,17 @@ let resetBtn;
 // 마지막에 입력한 값 출력해야하니까 여태 누른 값 다 저장해서 보여주고
 // 마지막에 누른 숫자가 난수보다 낮거나 높은지 비교해서 알려주기
 
+// 누른횟수,입력한값에 따라 정답인지 아닌지 체크 후 그에 해당하는 값 출력해주는 기능
 function checkGuess() {
    const userGuess = Number(guessField.value);
 
    if (guessCount === 1) {
-      guesses.textContent = 'Previous guesses:';
+      guesses.textContent = '입력했던 숫자들: ';
    }
    guesses.textContent += userGuess + '';
 
    if (userGuess === ranNum) {
-      lastResult.textContent = 'Congratulations! You got it right';
+      lastResult.textContent = '정답입니다!';
       lastResult.style.backgroudColor = 'blue';
       lowOrHi.textContent = '';
       setGameOver();
@@ -34,12 +35,12 @@ function checkGuess() {
       lowOrHi.textContent = '';
       setGameOver();
    } else {
-      lastResult.textContent = 'wrong!';
+      lastResult.textContent = '땡!';
       lastResult.style.backgroudColor = 'purple';
       if (userGuess < ranNum) {
-         lowOrHi.textContent = 'Last guess was too law';
+         lowOrHi.textContent = '마지막 숫자보다 높습니다.';
       } else {
-         lowOrHi.textContent = 'Last guess was too high';
+         lowOrHi.textContent = '마지막 숫자보다 낮습니다.';
       }
    }
 

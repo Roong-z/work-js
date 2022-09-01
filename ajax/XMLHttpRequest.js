@@ -1,7 +1,7 @@
 // XMLhttpRequest object 생성
 const Request = new XMLHttpRequest();
 
-// GET요청하기
+// GET요청하기(req : request)
 function GetRequest() {
    // onreadystatechange : 요청에 대한 상태가 변화할 때 마다 function 호출해줌
    Request.onreadystatechange = function () {
@@ -12,6 +12,7 @@ function GetRequest() {
          const data = Request.responseText;
          const newData = JSON.parse(data);
          console.log(newData);
+         //  console.log(newData);
          document.getElementById('get').innerHTML = newData.name[0];
          // 응답 데이터의 종류 : responseText / responseXML
       }
@@ -23,7 +24,7 @@ function GetRequest() {
    Request.send();
 }
 
-// POST요청하기
+// POST요청하기(405에러뜨는중 아직 해결못함 ㅜ)
 function PostRequest() {
    Request.onreadystatechange = function () {
       if (Request.readyState === 4 && Request.status === 200) {
@@ -32,9 +33,7 @@ function PostRequest() {
    };
    Request.open('POST', './test.json', true);
    //POST 방식 사용시 아래 메소드 추가(MIME type 설정)
-   Request.setRequestHeader(
-      'Content-Type',
-      'application/x-www-form-urlencoded',
-   );
-   Request.send();
+   //JSON을 보낼때는 Content-Type을 설정 x / FormData를 사용하면 Content-Type은 multipart/form-data로 자동
+   Request.setRequestHeader('Content-Type', 'application/json');
+   Request.send('');
 }

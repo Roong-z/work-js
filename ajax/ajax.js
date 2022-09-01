@@ -1,9 +1,9 @@
-fetch('./test.json', {
-   method: 'GET',
-})
-   .then(res => res.json())
-   .then(data => console.log(data))
-   .catch(error => console.log('ERROR'));
+// fetch('./test.json', {
+//    method: 'GET',
+// })
+//    .then(res => res.json())
+//    .then(data => console.log(data))
+//    .catch(error => console.log('ERROR'));
 
 // test1
 // const getBtn = document.getElementById('getBtn');
