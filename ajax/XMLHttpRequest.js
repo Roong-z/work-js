@@ -12,7 +12,6 @@ function GetRequest() {
          const data = Request.responseText;
          const newData = JSON.parse(data);
          console.log(newData);
-         //  console.log(newData);
          document.getElementById('get').innerHTML = newData.name[0];
          // 응답 데이터의 종류 : responseText / responseXML
       }

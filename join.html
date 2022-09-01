@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="./join.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action='./login.html'>
+        <div>
+            <div class="input-group mb-3" style="width: 300px; padding: 5px;">
+                <span class="input-group-text" id="inputGroup-sizing-default">아이디</span>
+                <input placeholder="특수문자 사용 불가" id='idInput' type="text" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3" style="width: 300px; padding: 5px;">
+                <span class="input-group-text" id="inputGroup-sizing-default">비밀번호</span>
+                <input placeholder="6자이상14자이하" id='pwInput' type="password" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3" style="width: 300px; padding: 5px;">
+                <span class="input-group-text" id="inputGroup-sizing-default">비밀번호확인</span>
+                <input placeholder="6자이상14자이하" id='pwCheck' type="password" class="form-control"
+                    aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <button type="button" class="btn btn-outline-danger" onclick="back()">가입안할래요</button>
+        <button type="submit" class="btn btn-outline-success">가입하기</button>
+    </form>
+</body>
+
+</html>

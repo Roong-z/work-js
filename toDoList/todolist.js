@@ -12,12 +12,19 @@ const welcomeBtn = document.createElement('button');
 const TODOLIST = 'toDoList';
 let toDoList = [];
 
-// 버튼 누르면 이름 입력창 나오게 하고 환영문구
+// 버튼 누르면 이름 입력창 나오게 하고 환영문구(+공백검사 기능 추가)
 welcomeBtn.innerHTML = '환영버튼';
 document.body.appendChild(welcomeBtn);
+welcomeBtn.className = 'btn btn-primary';
 welcomeBtn.addEventListener('click', function () {
    let name = prompt('What is your name?');
-   alert(`Hello ${name} let's go work!`);
+   let blank_pattern = /^\s+|\s+$/g;
+   if (name.replace(blank_pattern, '') == '') {
+      alert('아이디를 입력해주세요');
+   } else {
+      document.querySelector('.id').innerHTML = `${name}님 안녕하세요!`;
+      alert(`Hello ${name} let's go work!`);
+   }
 });
 
 // 새로운 버튼 생성하는 기능
@@ -33,6 +40,7 @@ function paintToDo(toDo) {
    const span = document.createElement('span');
    const delBtn = document.createElement('button');
    delBtn.innerText = '삭제';
+   delBtn.className = 'btn btn-danger delBtn';
    delBtn.addEventListener('click', delToDo);
    span.innerHTML = toDo;
    li.appendChild(span);
